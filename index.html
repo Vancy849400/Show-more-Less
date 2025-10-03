@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .show {
+        display: none;
+      }
+
+      .hide {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-sky-200 m-0 p-0 font-mono">
+    <div class="container mx-20 flex justify-center items-center h-screen">
+      <div class="items bg-white p-5 m-10 shadow-xl">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+          voluptas.
+        </p>
+        <p class="show text-red-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quidem,
+          et enim unde voluptate velit officia culpa ipsa dolorem reiciendis.
+        </p>
+        <span class="text-blue-500 cursor-pointer">Read More</span>
+      </div>
+    </div>
+    <script>
+      //Select elements
+      const show = document.querySelector(".show");
+      const handleClick = document.querySelector("span");
+
+      //Add a click event to the element
+      handleClick.addEventListener("click", () => {
+        show.classList.toggle("hide")
+          ? (handleClick.innerText = "Read Less")
+          : (handleClick.innerText = "Read More");
+      });
+    </script>
+  </body>
+</html>
